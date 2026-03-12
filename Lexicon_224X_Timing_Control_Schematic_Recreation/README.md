@@ -1,85 +1,70 @@
-# Lexicon 224X Digital Reverb
+🎚️ Lexicon 224X Digital Reverb
+Timing & Control Circuit — Schematic Recreation
 
-## Timing & Control Circuit – Schematic Recreation
+🏛️ Preserving a legend of studio audio engineering through modern schematic design.
 
-### Project Overview
+📌 Project Overview
+This project involved the digital reconstruction of the timing and control schematic from the Lexicon 224X Digital Reverb System — a legendary professional audio processor widely used in studio signal processing during the late twentieth century.
+The schematic was carefully rebuilt from the final pages of the original service documentation using modern EDA tools, preserving the original circuit architecture and logic with full fidelity.
 
-This project involved recreating a portion of the schematic from the **Lexicon 224X Digital Reverb System**, a classic professional audio processor widely used in studio signal processing during the late twentieth century.
+Completed as a freelance project on Upwork in collaboration with GenXI Tech Solutions.
+Also served as a practical deep-dive into electrical engineering, digital electronics, and circuit analysis.
 
-The objective of the work was to digitally reconstruct the original hardware design using modern electronic design tools while preserving the architecture and logic of the historical circuit. The schematic was reconstructed from the final pages of the original service documentation and carefully redrawn for clarity and modern usability.
 
-This work was completed as part of a freelance project for a client on Upwork in collaboration with GenXI Tech Solutions. In addition to fulfilling the project requirements, the task also served as a practical exercise to further strengthen my electrical engineering, digital electronics, and circuit analysis skills.
+⚠️ Design Challenges
+The Lexicon 224X originates from an earlier generation of digital electronics — many of its ICs are completely absent from modern schematic libraries, requiring significant reverse-engineering effort.
+#ChallengeApproach1📄 Interpreting legacy service documentationCross-referenced original service manuals carefully2🔌 Mapping obsolete ICs to modern representationsManually recreated missing components from datasheets3🔁 Maintaining correct signal flow & logic relationshipsVerified against original circuit topology4🧩 Rebuilding missing library componentsDesigned custom symbols from scratch5📐 Following modern schematic standardsApplied current EDA best practices throughout
 
----
+🔧 Custom Schematic Symbols Created
+Because many legacy components were absent from standard libraries, the following custom symbols were designed from scratch based on original datasheets and service manual documentation:
+SymbolComponentDescriptionAM8304NDigital Audio ICAudio processing IC used in control logicMCM68B10RAM InterfaceMemory interface component74S112Flip-FlopDual JK flip-flop logic device74S00Logic GateQuad NAND gate IC74S163 / 74LS163Counter4-bit synchronous binary counter74F374Flip-FlopOctal edge-triggered flip-flop
 
-### Design Challenges
+✅ All symbols recreated with correct pin mapping and logical representation for simulation compatibility.
 
-The hardware originates from an earlier generation of digital electronics. Many of the integrated circuits used in the original system are no longer available in modern schematic libraries.
 
-To accurately represent the original design, several components had to be recreated manually. This involved studying the legacy documentation and reconstructing the circuit blocks while ensuring the schematic remained faithful to the original architecture.
+🔬 Circuit Section Recreated
+The recreated schematic covers the Timing & Control Section — the digital backbone that coordinates all internal operations of the reverb processor.
+┌──────────────────────────────────────────────────────┐
+│              TIMING & CONTROL SECTION                │
+│                                                      │
+│   ┌─────────────┐     ┌──────────────┐              │
+│   │ Logic Gates │────▶│   Address    │              │
+│   │ & Flip-Flops│     │   Counters   │              │
+│   └─────────────┘     └──────┬───────┘              │
+│                              │                       │
+│                    ┌─────────▼────────┐              │
+│                    │  Memory Interface│              │
+│                    │   Connections    │              │
+│                    └─────────┬────────┘              │
+│                              │                       │
+│          ┌───────────────────▼──────────────────┐   │
+│          │   Clock · Timing · Control Signals   │   │
+│          └──────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────┘
+This section includes:
 
-Key challenges included:
+⏱️ Logic gates and flip-flops — combinational and sequential logic
+🔢 Address counters — data addressing and sequencing
+🧠 Memory interface connections — RAM coordination
+🕐 Clock and timing signals — synchronization throughout the system
+🔀 Control signal routing — orchestration of all subsystems
 
-• Interpreting legacy service documentation
-• Mapping obsolete ICs to modern schematic representations
-• Maintaining correct signal flow and logic relationships
-• Rebuilding missing library components
-• Following modern schematic design standards for clarity and simulation compatibility
+Together these elements regulate data flow, synchronization, and address generation within the processor's DSP architecture.
 
----
+🎯 Purpose of the Recreation
+GoalValue Delivered📚 Modern documentationLegacy hardware made permanently accessible🔍 Circuit analysisDeep study of vintage digital audio design🧪 Simulation readinessFully compatible with modern EDA tools🏛️ Historical preservationClassic audio engineering architecture preserved🎓 Educational explorationUsable reference for digital electronics study
 
-### Custom Symbols Created
+🛠️ Tools & Technologies
+KiCad  ·  Custom Symbol Design  ·  Legacy IC Recreation  ·  Digital Logic Analysis  ·  Schematic Capture  ·  Service Manual Interpretation
 
-Because many legacy components were not available in standard libraries, custom schematic symbols were designed for accurate representation of the circuit.
+✅ Conclusion
+Recreating this circuit required careful interpretation of historical documentation and the reconstruction of obsolete components within a modern design environment.
+This project bridges vintage digital audio technology with modern schematic design practices — allowing the architecture of a historically important piece of studio hardware to remain accessible for study, simulation, and preservation.
 
-Examples include:
+"Classic audio engineering, reimagined for the modern era."
 
-AM8304N – Digital audio processing related IC used in the control logic
-MCM68B10 – RAM memory interface component
-74S112 – Dual JK flip-flop logic device
-74S00 – Quad NAND gate logic IC
-74S163 / 74LS163 – 4-bit synchronous binary counter
-74F374 – Octal edge-triggered flip-flop
 
-These custom symbols were recreated based on the original datasheets and service manual documentation to ensure correct pin mapping and logical representation.
+👤 About
+👨‍💻 FreelancerAmir Rehman🌐 GitHub@amirrehman19🤝 ClientGenXI Tech Solutions💼 PlatformUpwork📅 Year2026
 
----
-
-### Circuit Section Recreated
-
-The recreated schematic represents the **timing and control section** of the digital reverb processor.
-
-This section coordinates the internal digital operations of the system and includes:
-
-• Logic gates and flip-flops
-• Address counters
-• Memory interface connections
-• Clock and timing signals
-• Control signal routing
-
-Together, these elements regulate data flow, synchronization, and address generation within the processor's digital signal processing architecture.
-
----
-
-### Purpose of the Recreation
-
-The recreated schematic enables:
-
-• Modern documentation of legacy hardware
-• Circuit analysis and study of vintage digital audio systems
-• Simulation and educational exploration
-• Preservation of historical electronic designs
-
----
-
-### Tools Used
-
-Modern electronic design software was used to recreate and organize the schematic while maintaining compatibility with current design standards.
-
----
-
-### Conclusion
-
-Recreating this circuit required careful interpretation of historical documentation and the reconstruction of obsolete components within a modern design environment. The project demonstrates how classic audio engineering hardware can be analyzed and preserved using contemporary electronic design tools.
-
-This work bridges vintage digital audio technology with modern schematic design practices, allowing the architecture of historically important hardware to remain accessible for study and exploration.
+⬅️ Back to Upwork Projects Portfolio
