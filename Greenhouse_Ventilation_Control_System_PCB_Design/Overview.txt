@@ -1,0 +1,23 @@
+The PCB was designed as a 2-layer board following standard industry practices to ensure electrical reliability, safety, and ease of manufacturing.
+
+The top layer (F.Cu) is used for signal and power routing. Trace widths were selected based on the electrical role of each net:
+
+Signal traces (including 3.3 V): 0.30 mm
+
+Other low-current control and logic traces: 0.25–0.30 mm
+
+Mains Traces : 1 mm
+
+CLearance : 3.2mm
+
+Higher-current paths (fan, relay, and load connections): wider traces were used accordingly to safely handle the required current
+
+The bottom layer (B.Cu) is implemented as a solid ground plane (GND copper pour) covering the full PCB area. This provides a low-impedance ground reference, improves noise performance, and simplifies routing. Ground stitching vias were added at key locations to ensure all top-layer ground points are properly connected to the bottom ground plane.
+
+Component placement was optimized to maintain clear separation between high-voltage and low-voltage sections, minimize trace lengths, and improve overall layout robustness.
+
+Mounting holes were placed according to the enclosure dimensions to ensure proper mechanical alignment.
+
+A complete Design Rules Check (DRC) was performed after routing and copper pours. The final design reports 0 errors, 0 warnings, and 0 unconnected nets, confirming the PCB is electrically correct and ready for fabrication.
+
+All manufacturing files (Gerbers, drill files) and the BOM have been generated.
