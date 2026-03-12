@@ -7,7 +7,7 @@
 ![Domain](https://img.shields.io/badge/Domain-Digital%20Electronics-blue?style=flat-square)
 ![Type](https://img.shields.io/badge/Type-Schematic%20Recreation-purple?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
-![Client](https://img.shields.io/badge/Client-GenXI%20Tech%20Solutions-orange?style=flat-square)
+![collaborate](https://img.shields.io/badge/Client-GenXI%20Tech%20Solutions-orange?style=flat-square)
 
 ---
 
@@ -123,7 +123,7 @@ This project bridges **vintage digital audio technology** with modern schematic 
 |-|---|
 | 👨‍💻 **Freelancer** | Amir Rehman |
 | 🌐 **GitHub** | [@amirrehman19](https://github.com/amirrehman19) |
-| 🤝 **Client** | GenXI Tech Solutions |
+| 🤝 **collaborate** | GenXI Tech Solutions |
 | 💼 **Platform** | Upwork |
 | 📅 **Year** | 2026 |
 
