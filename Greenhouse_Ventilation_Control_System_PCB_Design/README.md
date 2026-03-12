@@ -1,109 +1,157 @@
-# Greenhouse Ventilation Control System
+# 🌿 Greenhouse Ventilation Control System
+## PCB & Hardware Design
 
-## PCB and Hardware Design
+> 🌱 *Smart agriculture through embedded IoT — automated climate control for optimal greenhouse growing conditions.*
 
-### Project Overview
-
-This project involved the schematic and PCB design of a **greenhouse automation controller** developed for a client through Upwork. The system is designed to monitor environmental conditions inside a greenhouse and automatically control ventilation systems to maintain optimal growing conditions.
-
-The controller is built around the **Particle Boron 404X microcontroller**, which communicates with **RuuviTag BLE wireless temperature and humidity sensors** installed within the greenhouse. These sensors continuously measure environmental parameters and transmit the data to the controller.
-
-Based on real-time environmental data, the system automatically operates ventilation systems to regulate temperature, humidity, and air circulation.
-
-All system data is transmitted to the **Blynk IoT Platform**, allowing users to remotely monitor greenhouse conditions and system status through a cloud-based dashboard.
-
-This project was completed as part of a freelance collaboration with **GenXI Tech Solutions**.
+[![Platform](https://img.shields.io/badge/Platform-Upwork-14a800?style=flat-square&logo=upwork)](https://www.upwork.com)
+[![Domain](https://img.shields.io/badge/Domain-PCB%20%26%20IoT%20Design-blue?style=flat-square)]()
+[![MCU](https://img.shields.io/badge/MCU-Particle%20Boron%20404X-red?style=flat-square)]()
+[![Cloud](https://img.shields.io/badge/Cloud-Blynk%20IoT-purple?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)]()
+[![Collaboration](https://img.shields.io/badge/In%20Collaboration%20With-GenXI%20Tech%20Solutions-orange?style=flat-square)](https://github.com/amirrehman19)
 
 ---
 
-### System Functionality
+## 📌 Project Overview
+
+This project involved the complete **schematic and PCB design** of a greenhouse automation controller developed for a client on **Upwork**. The system monitors real-time environmental conditions inside a greenhouse and automatically controls ventilation to maintain optimal growing conditions.
+
+The controller is built around the **Particle Boron 404X** microcontroller, which communicates wirelessly with **RuuviTag BLE sensors** for live temperature and humidity data. All system data streams to the **Blynk IoT Platform**, enabling remote cloud-based monitoring and control.
+
+> 🤝 *This project was completed in collaboration with **GenXI Tech Solutions**.*
+
+---
+
+## ⚙️ System Functionality
 
 The system manages two ventilation mechanisms inside the greenhouse:
 
-**GAHT Fan (Ground-to-Air Heat Transfer)**
-This fan circulates air through an underground loop to regulate temperature, control humidity levels, and reduce thermal stratification inside the greenhouse.
+| Fan | Full Name | Role |
+|-----|-----------|------|
+| 🌀 **GAHT Fan** | Ground-to-Air Heat Transfer | Circulates air through an underground loop — regulates temperature, humidity & reduces thermal stratification |
+| 💨 **HAF Fan** | Horizontal Air Flow | Maintains continuous horizontal air circulation — improves airflow & reduces plant disease risk |
 
-**HAF Fan (Horizontal Air Flow)**
-This fan maintains continuous horizontal air circulation throughout the greenhouse to improve airflow and help reduce plant disease risk caused by stagnant air.
-
-The controller continuously processes environmental sensor data and automatically activates these systems when required.
-
----
-
-### Hardware Architecture
-
-The hardware system includes the following main components:
-
-Particle Boron 404X microcontroller for system control and cloud connectivity
-
-RuuviTag BLE temperature and humidity sensors for environmental monitoring
-
-ACS712 current sensor for monitoring fan current and detecting possible faults
-
-Relay or switching circuitry for controlling ventilation fans
-
-Power supply and protection circuitry for safe operation
-
-Communication interface with the Blynk IoT cloud platform
+The controller continuously processes sensor data and **automatically activates** these systems when environmental thresholds are reached.
 
 ---
 
-### PCB Design Details
+## 🧩 Hardware Architecture
 
-The hardware was designed as a **two-layer printed circuit board** following standard PCB layout practices for reliability and manufacturability.
+```
+┌─────────────────────────────────────────────────────────┐
+│              SYSTEM ARCHITECTURE                        │
+│                                                         │
+│   RuuviTag BLE Sensors                                  │
+│   (Temp & Humidity) ──────┐                             │
+│                           ▼                             │
+│                  ┌─────────────────┐                    │
+│                  │ Particle Boron  │──── Blynk IoT ☁️   │
+│                  │     404X        │     Cloud Dashboard │
+│                  └────────┬────────┘                    │
+│                           │                             │
+│              ┌────────────┴────────────┐                │
+│              ▼                         ▼                │
+│       ┌─────────────┐         ┌──────────────┐         │
+│       │  GAHT Fan   │         │   HAF Fan    │         │
+│       │  (Relay)    │         │   (Relay)    │         │
+│       └─────────────┘         └──────────────┘         │
+│                           │                             │
+│                  ┌─────────────────┐                    │
+│                  │ ACS712 Current  │                    │
+│                  │    Sensor       │ ← Fault Detection  │
+│                  └─────────────────┘                    │
+└─────────────────────────────────────────────────────────┘
+```
 
-Key design features include:
+**Main Hardware Components:**
 
-• Separation of high-voltage and low-voltage sections
-• 3.2 mm electrical clearance between power domains for safety
-• Optimized signal trace widths between 0.25 mm and 0.30 mm
-• Wider traces used for power distribution paths
-• Solid ground plane to improve signal stability
-• Ground stitching vias to enhance noise immunity and reduce EMI
-• Careful component placement to fit the project enclosure while maintaining safe electrical spacing
-
----
-
-### Fault Monitoring
-
-An **ACS712 current sensing module** was integrated into the design to monitor the current drawn by the ventilation fans.
-
-This allows the system to detect abnormal current behavior that may indicate:
-
-• Fan malfunction
-• Electrical faults
-• Overload conditions
-
-Fault information can be reported through the cloud dashboard.
-
----
-
-### Manufacturing Outputs
-
-Complete manufacturing outputs were generated to prepare the board for fabrication, including:
-
-• Gerber files
-• Drill files
-• Bill of Materials (BOM)
-
-The design successfully passed **Design Rule Check (DRC)** with:
-
-0 Errors
-0 Warnings
-0 Unconnected Nets
-
-This confirms that the PCB is fully ready for manufacturing.
+| Component | Role |
+|-----------|------|
+| 🧠 `Particle Boron 404X` | System control & cloud connectivity |
+| 📡 `RuuviTag BLE Sensors` | Wireless temperature & humidity monitoring |
+| ⚡ `ACS712 Current Sensor` | Fan current monitoring & fault detection |
+| 🔌 `Relay / Switch Circuit` | Ventilation fan control |
+| 🔋 `Power Supply & Protection` | Safe system operation |
+| ☁️ `Blynk IoT Platform` | Remote cloud dashboard & monitoring |
 
 ---
 
-### Purpose of the Design
+## 🖨️ PCB Design Details
 
-The project demonstrates a practical application of embedded systems and IoT technologies in agriculture. By combining environmental sensing, automated ventilation control, and cloud monitoring, the system provides an efficient solution for greenhouse climate management.
+> **2-Layer PCB** designed following professional layout practices for reliability and manufacturability.
+
+| Design Parameter | Specification |
+|-----------------|---------------|
+| 🗂️ Board Layers | 2-Layer |
+| ⚡ Electrical Clearance | 3.2 mm between power domains |
+| 📏 Signal Trace Width | 0.25 mm – 0.30 mm |
+| 🔋 Power Traces | Wider traces for power distribution |
+| 🌍 Ground Plane | Solid pour with stitching vias |
+| ✅ DRC Errors | **0** |
+| ✅ DRC Warnings | **0** |
+| ✅ Unconnected Nets | **0** |
+
+**Key Layout Features:**
+- ✅ Separation of high-voltage and low-voltage sections
+- ✅ 3.2 mm electrical clearance for safety between power domains
+- ✅ Solid ground plane for improved signal stability
+- ✅ Ground stitching vias to reduce EMI & noise
+- ✅ Component placement optimized for enclosure fit
 
 ---
 
-### Conclusion
+## ⚠️ Fault Monitoring
 
-This project highlights the integration of embedded hardware, PCB design, and IoT connectivity to create a reliable greenhouse automation solution. It also demonstrates the application of professional PCB layout practices to ensure electrical safety, signal integrity, and manufacturing readiness.
+An **ACS712 current sensing module** monitors fan current in real-time to detect abnormal behavior:
 
-The design provides a scalable platform for future greenhouse automation systems and further expansion of smart agriculture technologies.
+| Fault Type | Indication |
+|-----------|------------|
+| 🔴 Fan Malfunction | Abnormal current draw detected |
+| 🔴 Electrical Fault | Unexpected current spike or drop |
+| 🔴 Overload Condition | Current exceeds safe threshold |
+
+> Fault events are reported directly through the **Blynk cloud dashboard** for instant visibility.
+
+---
+
+## 📦 Manufacturing Outputs
+
+Complete fabrication-ready outputs were generated:
+
+- ✅ **Gerber Files** — Board layer data for fabrication
+- ✅ **Drill Files** — Via and hole specifications
+- ✅ **Bill of Materials (BOM)** — Full component list
+
+> 🏆 Design passed **DRC with 0 errors, 0 warnings, and 0 unconnected nets** — fully ready for manufacturing.
+
+---
+
+## 🛠️ Tools & Technologies
+
+`KiCad` &nbsp;·&nbsp; `Particle Boron 404X` &nbsp;·&nbsp; `RuuviTag BLE` &nbsp;·&nbsp; `ACS712` &nbsp;·&nbsp; `Blynk IoT` &nbsp;·&nbsp; `PCB Layout` &nbsp;·&nbsp; `Gerber Export` &nbsp;·&nbsp; `2-Layer PCB Design`
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates a practical application of **embedded systems and IoT in agriculture** — combining environmental sensing, automated ventilation control, and cloud monitoring into a reliable greenhouse climate management solution.
+
+The design follows professional PCB layout standards ensuring **electrical safety**, **signal integrity**, and **manufacturing readiness**, while providing a scalable platform for future smart agriculture expansion.
+
+> *"From soil to cloud — intelligent greenhouse automation through embedded IoT design."*
+
+---
+
+## 👤 About
+
+| | |
+|-|---|
+| 👨‍💻 **Freelancer** | Amir Rehman |
+| 🌐 **GitHub** | [@amirrehman19](https://github.com/amirrehman19) |
+| 🤝 **Collaboration** | GenXI Tech Solutions |
+| 💼 **Platform** | Upwork |
+| 📅 **Year** | 2026 |
+
+---
+
+⬅️ *Back to [Upwork Projects Portfolio](../README.md)*
