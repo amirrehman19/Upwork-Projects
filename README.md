@@ -197,7 +197,7 @@ The recreated schematic covers the **Timing & Control Section** of the Lexicon 2
 |-|---|
 | 👨‍💻 **Freelancer** | Amir Rehman |
 | 🌐 **GitHub** | [@amirrehman19](https://github.com/amirrehman19) |
-| 🤝 **Client** | GenXI Tech Solutions |
+| 🤝 **collaborate** | GenXI Tech Solutions |
 | 💼 **Platform** | Upwork |
 | 📅 **Year** | 2026 |
 
